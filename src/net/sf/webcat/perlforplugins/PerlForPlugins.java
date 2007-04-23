@@ -60,7 +60,6 @@ public class PerlForPlugins
     public PerlForPlugins()
     {
         super();
-        System.out.println( "PerlForPlugins loaded" );
     }
 
 
