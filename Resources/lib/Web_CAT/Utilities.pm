@@ -33,7 +33,8 @@ use Exporter qw( import );
 
 @ISA = qw( Exporter );
 @EXPORT_OK = qw( confirmExists filePattern copyHere htmlEscape addReportFile
-                 scanTo scanThrough printableSize linesFromFile );
+                 scanTo scanThrough printableSize linesFromFile
+                 ltrim rtrim trim );
 
 
 #========================================================================
@@ -394,6 +395,57 @@ included in the result.
     }
     # print "$#result lines to return\n";
     return @result;
+}
+
+
+#========================================================================
+sub ltrim
+{
+
+=head2 ltrim($string)
+
+Returns the string with all white space removed from the left
+end (front).
+
+=cut
+
+    my $string = shift || confess "ltrim: string required";
+    $string =~ s/^\s+//o;
+    return $string;
+}
+
+
+#========================================================================
+sub rtrim
+{
+
+=head2 rtrim($string)
+
+Returns the string with all white space removed from the right
+end (back).
+
+=cut
+
+    my $string = shift || confess "rtrim: string required";
+    $string =~ s/\s+$//o;
+    return $string;
+}
+
+
+#========================================================================
+sub trim
+{
+
+=head2 trim($string)
+
+Returns the string with all white space removed from both ends.
+
+=cut
+
+    my $string = shift || confess "trim: string required";
+    $string =~ s/^\s+//o;  # ltrim
+    $string =~ s/\s+$//o;  # rtrim
+    return $string;
 }
 
 
