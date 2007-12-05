@@ -26,6 +26,7 @@
 package net.sf.webcat.perlforplugins;
 
 import com.webobjects.foundation.*;
+
 import java.io.File;
 import org.apache.log4j.Logger;
 import net.sf.webcat.core.Application;
@@ -101,8 +102,33 @@ public class PerlForPlugins
     }
 
 
+    // ----------------------------------------------------------
+    /**
+     * Add any subsystem-specific plug-in property bindings
+     * to the given dictionary.
+     * @param properties the dictionary to add new properties to;
+     * individual plug-in information may override these later.
+     */
+    public void addPluginPropertyBindings( NSMutableDictionary properties )
+    {
+        properties.takeValueForKey(
+            SUBSYSTEM_PREFIX + FILE_SEPARATOR_KEY,
+            System.getProperty( FILE_SEPARATOR_KEY ) );
+        properties.takeValueForKey(
+            SUBSYSTEM_PREFIX + PATH_SEPARATOR_KEY,
+            System.getProperty( PATH_SEPARATOR_KEY ) );
+        properties.takeValueForKey(
+            SUBSYSTEM_PREFIX + LINE_SEPARATOR_KEY,
+            System.getProperty( LINE_SEPARATOR_KEY ) );
+    }
+
+
     //~ Instance/static variables .............................................
 
+    private static final String SUBSYSTEM_PREFIX = "PerlForPlugins.";
     private static final String PERLLIB_KEY = "PERLLIB";
+    private static final String FILE_SEPARATOR_KEY = "file.separator";
+    private static final String PATH_SEPARATOR_KEY = "path.separator";
+    private static final String LINE_SEPARATOR_KEY = "line.separator";
     static Logger log = Logger.getLogger( PerlForPlugins.class );
 }
