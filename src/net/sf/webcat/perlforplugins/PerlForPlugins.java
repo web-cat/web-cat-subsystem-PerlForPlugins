@@ -112,14 +112,14 @@ public class PerlForPlugins
     public void addPluginPropertyBindings( NSMutableDictionary properties )
     {
         properties.takeValueForKey(
-            SUBSYSTEM_PREFIX + FILE_SEPARATOR_KEY,
-            System.getProperty( FILE_SEPARATOR_KEY ) );
+            System.getProperty( FILE_SEPARATOR_KEY ),
+            SUBSYSTEM_PREFIX + FILE_SEPARATOR_KEY );
         properties.takeValueForKey(
-            SUBSYSTEM_PREFIX + PATH_SEPARATOR_KEY,
-            System.getProperty( PATH_SEPARATOR_KEY ) );
+            System.getProperty( PATH_SEPARATOR_KEY ),
+            SUBSYSTEM_PREFIX + PATH_SEPARATOR_KEY );
         properties.takeValueForKey(
-            SUBSYSTEM_PREFIX + LINE_SEPARATOR_KEY,
-            System.getProperty( LINE_SEPARATOR_KEY ) );
+            System.getProperty( LINE_SEPARATOR_KEY ),
+            SUBSYSTEM_PREFIX + LINE_SEPARATOR_KEY );
     }
 
 
