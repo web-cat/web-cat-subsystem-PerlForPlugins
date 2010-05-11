@@ -19,13 +19,13 @@
  |  along with Web-CAT; if not, see <http://www.gnu.org/licenses/>.
 \*==========================================================================*/
 
-package net.sf.webcat.perlforplugins;
+package org.webcat.perlforplugins;
 
 import com.webobjects.foundation.*;
 import java.io.File;
-import net.sf.webcat.core.Application;
-import net.sf.webcat.core.Subsystem;
 import org.apache.log4j.Logger;
+import org.webcat.core.Application;
+import org.webcat.core.Subsystem;
 
 // -------------------------------------------------------------------------
 /**
