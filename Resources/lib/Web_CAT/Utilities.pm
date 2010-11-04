@@ -178,7 +178,7 @@ will be added to the corresponding array.
             # print "mkdir( $newfile );\n" if $debug;
             mkdir( $newfile );
         }
-        foreach my $f ( <"$file"/*> )
+        foreach my $f ( glob("$file/*") )
         {
             copyHere( $f, $base );
         }
