@@ -211,6 +211,7 @@ characters, returning the final result.
     if ( defined $str )
     {
         $str = encode_entities( expand( $ str ) );
+        $str =~ s/&#([01]?[0-9]);/&#171;&amp;#$1&#187;/g;
     }
     return $str;
 }
