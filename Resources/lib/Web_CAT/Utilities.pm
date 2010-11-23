@@ -210,7 +210,7 @@ characters, returning the final result.
     my $str = shift;
     if ( defined $str )
     {
-        $str = encode_entities( expand( $ str ) );
+        $str = HTML::Entities::encode_entities_numeric( expand( $ str ) );
         $str =~ s/&#([01]?[0-9]);/&#171;&amp;#$1&#187;/g;
     }
     return $str;
