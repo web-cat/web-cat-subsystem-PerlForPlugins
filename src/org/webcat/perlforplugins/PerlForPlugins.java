@@ -24,6 +24,7 @@ package org.webcat.perlforplugins;
 import com.webobjects.foundation.*;
 import java.io.File;
 import org.apache.log4j.Logger;
+import org.webcat.core.Application;
 import org.webcat.core.Subsystem;
 
 // -------------------------------------------------------------------------
@@ -116,6 +117,10 @@ public class PerlForPlugins
         properties.takeValueForKey(
             System.getProperty(LINE_SEPARATOR_KEY),
             SUBSYSTEM_PREFIX + LINE_SEPARATOR_KEY);
+        properties.takeValueForKey(
+            Application.configurationProperties().valueForKey(
+                SUBSYSTEM_PREFIX + EXEC_KEY),
+            SUBSYSTEM_PREFIX + EXEC_KEY);
     }
 
 
@@ -126,5 +131,6 @@ public class PerlForPlugins
     private static final String FILE_SEPARATOR_KEY = "file.separator";
     private static final String PATH_SEPARATOR_KEY = "path.separator";
     private static final String LINE_SEPARATOR_KEY = "line.separator";
+    private static final String EXEC_KEY = "perl.exe";
     static Logger log = Logger.getLogger(PerlForPlugins.class);
 }
