@@ -1,0 +1,15 @@
+bin/
+build/
+Resources/lib/Array/
+Resources/lib/auto/
+Resources/lib/Config/
+Resources/lib/CLOC/
+Resources/lib/Data/
+Resources/lib/File/
+Resources/lib/HTML/
+Resources/lib/IPC/
+Resources/lib/Lisp/
+Resources/lib/Object/
+Resources/lib/XML/
+Resources/lib/Proc/
+Resources/lib/Win32.pm

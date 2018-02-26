@@ -62,9 +62,9 @@ sub new
 		'files' => {},
 		'extOverrides' => {}
 	};
-	
+
 	bless($self, $class);
-	
+
 	return $self;
 }
 
@@ -76,7 +76,7 @@ sub addExtensionOverride
 	my $self = shift;
 	my $ext = shift;
 	my $lang = shift;
-	
+
 	$self->{'extOverrides'}{$ext} = $lang;
 }
 
@@ -105,7 +105,7 @@ sub execute
 		"--xml",
 		"--by-file"
 	);
-	
+
 	while ((my $ext,my $lang) = each(%{$self->{'extOverrides'}}))
 	{
 		push @args, "--force-lang=$lang,$ext"
@@ -125,9 +125,9 @@ sub execute
 	{
 		$self->{'files'}{$f->{name}} = {
 			'language' => sprintf('%s', $f->{language}),
-			'blank' => int($f->{blank}),
-			'comment' => int($f->{comment}),
-			'code' => int($f->{code})
+			'blank' => int($f->{blank} + 0),
+			'comment' => int($f->{comment} + 0),
+			'code' => int($f->{code} + 0)
 		};
 	}
 }

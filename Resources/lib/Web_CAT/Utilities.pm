@@ -338,10 +338,20 @@ to *main::ANTLOG{IO}.
     my $pattern = shift || '^\s*$';
     my $fh      = shift || *main::ANTLOG{IO};
 
+#    print "---scanTo: looking for: $pattern\n";
+#    if (defined $_)
+#    {
+#        print "---scanTo: starting with: $_";
+#    }
+#    else
+#    {
+#        print "---scanTo: starting with: <undef>\n";
+#    }
     if ( defined( $_ ) && !( m/$pattern/ ) )
     {
         while ( <$fh> )
         {
+#            print "---scanTo: $_";
             last if m/$pattern/;
         }
     }
@@ -365,6 +375,15 @@ file handle is optional, and defaults to *main::ANTLOG{IO}.
     my $pattern = shift || confess "scanThrough: pattern required";
     my $fh      = shift || *main::ANTLOG{IO};
 
+#    print "---scanThrough: looking for: $pattern\n";
+#    if (defined $_)
+#    {
+#        print "---scanThrough: starting with: $_";
+#    }
+#    else
+#    {
+#        print "---scanThrough: starting with: <undef>\n";
+#    }
     while (defined($_) && (
         m/^\s*$/o
         || m/$pattern/
@@ -372,6 +391,7 @@ file handle is optional, and defaults to *main::ANTLOG{IO}.
         ))
     {
         $_ = <$fh>;
+#            print "---scanThrough: $_";
     }
 }
 
@@ -754,4 +774,4 @@ __END__
 
 Stephen Edwards
 
-$Id$
+$Id: Utilities.pm,v 1.12 2014/06/16 17:45:37 stedwar2 Exp $

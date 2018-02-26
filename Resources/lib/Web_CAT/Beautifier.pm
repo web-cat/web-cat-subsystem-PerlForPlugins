@@ -472,10 +472,12 @@ EOF
                         $messageCount++;
                         if (!defined $category
                             || !defined $categoryPriority{$category}
+                            || !defined $categoryPriority{$c->{category}->content}
                             || $categoryPriority{$category} >
                                $categoryPriority{$c->{category}->content})
                         {
-                            $category = $c->{category}->content;
+                            $category = $c->{category}->content
+                              || $categoryPriority{$category};
                             $lineClass = " class=\"$category\"";
                         }
                         my $message = ($c->{message}->null)
@@ -640,7 +642,7 @@ sub beautify
                              $skipExtensions, $cfg );
         }
     }
-    else
+    elsif (-T $fileName )
     {
         my $thisMarkup = 0;
         my $trimmedName = $fileName;
