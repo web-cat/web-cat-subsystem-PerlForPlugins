@@ -1,16 +1,16 @@
 #This file is automatically rewritten by ANT, so all formatting will be trashed.
-#Sun Feb 25 21:08:38 GMT-05:00 2018
+#Tue Jul 31 13:47:03 GMT-08:00 2018
 subsystem.PerlForPlugins=org.webcat.perlforplugins.PerlForPlugins
 PerlForPlugins.version.minor=1
 PerlForPlugins.provider.url=http\://web-cat.org/updates
-PerlForPlugins.version.revision=9
+PerlForPlugins.version.revision=11
 PerlForPlugins.version.major=1
 PerlForPlugins.history.url=http\://wiki.web-cat.org/WCWiki/PerlForPluginsSubsystem/ChangeHistory
 PerlForPlugins.info.url=http\://wiki.web-cat.org/WCWiki/AntForPluginsSubsystem
-PerlForPlugins.copyright=(c) 2006-2014 Virginia Tech Department of Computer Science
+PerlForPlugins.copyright=(c) 2006-2018 Virginia Tech Department of Computer Science
 PerlForPlugins.provides=env
 PerlForPlugins.provider=Virginia Tech Computer Science
-PerlForPlugins.version.date=20180225
+PerlForPlugins.version.date=20180731
 PerlForPlugins.description=This subsystem provides support for Perl-based grading plug-ins, including a number of common CPAN modules as well as some custom-written Perl modules useful by plug-ins.
 PerlForPlugins.license.url=http\://www.gnu.org/licenses/agpl.html
 PerlForPlugins.requires=Core

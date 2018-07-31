@@ -33,6 +33,7 @@ sub new
     {
         $self->parseFile( $fileName );
     }
+
     return $self;
 }
 
@@ -166,6 +167,7 @@ sub addToPlist
 # addToPlist( plist );
 sub addToPerlList
 {
+
     my $self = shift;
     my $add = shift;
     while ( defined $add )
@@ -272,6 +274,7 @@ sub suites
     my $self = shift;
     my %result = ();
     my $list = $self->{'perlList'};
+
     while ($list =~ m/'suite'=>'([^']*)'/g)
     {
         $result{$1} = $1;
@@ -420,6 +423,14 @@ sub loadFromCfg
     }
 }
 
+
+#========================================================================
+#generate list of hashes from perlList
+sub listOfHashes
+{
+	my $self = shift;
+	return eval($self->{'perlList'});
+}
 
 # ---------------------------------------------------------------------------
 1;
